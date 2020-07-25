@@ -22,6 +22,6 @@ public class OrderController {
     }
     @GetMapping("/all")
     public List<OrderDto> findAll(){
-        return null;
+        return orderService.findAll();
     }
 }

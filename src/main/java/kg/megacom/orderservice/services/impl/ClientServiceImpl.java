@@ -32,7 +32,7 @@ public class ClientServiceImpl implements ClientService {
 
 
         List<PhoneDto> phoneDtos = clientDto.getPhoneDtoList().stream()
-                .filter(x->phoneService.existByMsisdn(x.getMsisdn())).collect(Collectors.toList());
+                .filter(x->!phoneService.existByMsisdn(x.getMsisdn())).collect(Collectors.toList());
 
         Client finalClient = client;
 
@@ -44,9 +44,11 @@ public class ClientServiceImpl implements ClientService {
                 }
         ).collect(Collectors.toList());
 
-        phoneDtos = phoneService.setPhonesToClient(phoneList);
-        clientDto = ClientMapper.INSTANCE.clientToClientDto(client);
-        clientDto.setPhoneDtoList(phoneDtos);
+        List<PhoneDto> phoneDtoList = phoneService.setPhonesToClient(phoneList);
+
+        clientDto = ClientMapper.INSTANCE.clientToClientDto(finalClient);
+        clientDto.setPhoneDtoList(phoneDtoList);
+   
 
         return clientDto;
     }

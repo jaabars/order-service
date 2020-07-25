@@ -12,10 +12,10 @@ public class OrderDetailDto {
     private Date estDate;
 
 
-    private ClientDto recipientClient;
+    private ClientDto recepient;
 
 
-    private ClientDto senderClient;
+    private ClientDto sender;
 
 
 }

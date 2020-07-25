@@ -1,5 +1,6 @@
 package kg.megacom.orderservice.mappers;
 
+import kg.megacom.orderservice.models.dto.OrderDetailDto;
 import kg.megacom.orderservice.models.dto.OrderDto;
 import kg.megacom.orderservice.models.entity.Order;
 import kg.megacom.orderservice.models.entity.OrderDetail;
@@ -23,9 +24,8 @@ public interface OrderMapper {
             @Mapping(source = "orderDetailList",target = "orderDetailDtoList"),
             @Mapping(source = "orderHistory",target ="orderHistory" )
     })
-    OrderDto orderToOrderDto(Order order, List<OrderDetail> orderDetailList, OrderHistory orderHistory);
+    OrderDto orderToOrderDto(Order order, List<OrderDetailDto> orderDetailList, OrderHistory orderHistory);
 
     List<Order> orderDtoListToOrderList(List<OrderDto> orderDtoList);
 
-   // List<OrderDto> orderListToOrderDtoList(List<Order> orderList,List<OrderDetail> orderDetailList,List<OrderHistory> orderHistoryList);
 }

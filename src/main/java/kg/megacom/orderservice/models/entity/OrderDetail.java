@@ -18,11 +18,11 @@ public class OrderDetail {
 
     @ManyToOne
     @JoinColumn(name = "recipient_id")
-    private Client recipientClient;
+    private Client recepient;
 
     @ManyToOne
     @JoinColumn(name = "sender_id")
-    private Client senderClient;
+    private Client sender;
 
     @ManyToOne
     @JoinColumn(name = "order_id")

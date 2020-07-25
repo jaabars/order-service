@@ -26,4 +26,11 @@ public class PhoneServiceImpl implements PhoneService {
         phoneList = phoneRepository.saveAll(phoneList);
         return PhoneMapper.INSTANCE.phoneListToPhoneDtoList(phoneList);
     }
+
+    @Override
+    public List<PhoneDto> findAllById(Long id) {
+        List<Phone> phoneList = phoneRepository.findPhonesByClient_Id(id);
+        List<PhoneDto> phoneDtoList = PhoneMapper.INSTANCE.phoneListToPhoneDtoList(phoneList);
+        return phoneDtoList;
+    }
 }

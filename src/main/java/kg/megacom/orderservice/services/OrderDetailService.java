@@ -8,4 +8,6 @@ import java.util.List;
 public interface OrderDetailService {
 
     List<OrderDetailDto> setDetailsToOrder(OrderDto orderDto);
+
+    List<OrderDetailDto> findAll(Long id);
 }

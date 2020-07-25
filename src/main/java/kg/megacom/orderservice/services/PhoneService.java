@@ -10,4 +10,5 @@ public interface PhoneService {
     boolean existByMsisdn(String msisdn);
 
     List<PhoneDto> setPhonesToClient(List<Phone> phoneList);
+    List<PhoneDto> findAllById(Long id);
 }
