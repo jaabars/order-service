@@ -48,7 +48,7 @@ public class ClientServiceImpl implements ClientService {
 
         clientDto = ClientMapper.INSTANCE.clientToClientDto(finalClient);
         clientDto.setPhoneDtoList(phoneDtoList);
-   
+
 
         return clientDto;
     }
